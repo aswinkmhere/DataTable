@@ -20,7 +20,7 @@ export class ModalpopupComponent implements OnInit {
   ngOnInit(): void {
     //this.loadDes();
     if(this.data.empcode!=null && this.data.empcode!=''){
-//this.LoadEditData(this.data.empcode);
+      this.LoadEditData(this.data.empcode);
     }
   }
 
@@ -30,13 +30,14 @@ export class ModalpopupComponent implements OnInit {
     });
   } */
 
-  /* LoadEditData(code: any) {
-    this.service.GetEmployeebycode(code).subscribe(item => {
+  LoadEditData(ruleGpId: any) {
+    this.service.GetRuleGpById(ruleGpId).subscribe(item => {
       this.editdata = item;
-      this.Reactiveform.setValue({code:this.editdata.code,name:this.editdata.name,email:this.editdata.email,
-        phone:this.editdata.phone,designation:this.editdata.designation,gender:'M',isactive:true})
+      this.Reactiveform.setValue({ruleGpName:this.editdata.ruleGpName,cas_id:this.editdata.cas_id,
+        description:this.editdata.description,book_ser_no:this.editdata.book_ser_no,persType:this.editdata.persType,
+        isCommon:this.editdata.isCommon})
     });
-  } */
+  }
 
   Reactiveform = new FormGroup({
     ruleGpName: new FormControl("", Validators.required),

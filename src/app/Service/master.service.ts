@@ -10,6 +10,7 @@ export class MasterService {
 
   apiurl = "http://localhost:8080/rules/gp/view";
   saveURL = "http://localhost:8080/rules/gp/add";
+  deleteUrl = "http://localhost:8080/rules/gp/delete";
 
 
   private _refreshrequired=new Subject<void>();
@@ -27,7 +28,7 @@ export class MasterService {
     return this.http.get(this.apiurl+'/'+code);
   }
   Remove(code:any){
-    return this.http.delete(this.apiurl+'/'+code);
+    return this.http.delete(this.deleteUrl+'/'+code);
   }
   Save(inputdata:any){
     return this.http.post(this.saveURL,inputdata).pipe(
