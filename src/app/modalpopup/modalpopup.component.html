@@ -1,37 +1,37 @@
-<h1 mat-dialog-title>Employee</h1>
+<h1 mat-dialog-title>Rule Gp</h1>
 <form [formGroup]="Reactiveform" (ngSubmit)="SaveEmployee()">
     <div mat-dialog-content>
         <mat-form-field>
-            <mat-label>Code</mat-label>
-            <input placeholder="Code" matInput formControlName="code">
-        </mat-form-field>
-        <mat-form-field>
             <mat-label>Name</mat-label>
-            <input placeholder="Name" matInput formControlName="name">
+            <input placeholder="Name" matInput formControlName="ruleGpName">
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input placeholder="Email" matInput formControlName="email">
+            <mat-label>Cas ID</mat-label>
+            <input numbersOnly placeholder="Cas ID" matInput formControlName="cas_id">
         </mat-form-field>
         <mat-form-field>
-            <mat-label>Phone</mat-label>
-            <input placeholder="Phone" matInput formControlName="phone">
+            <mat-label>Description</mat-label>
+            <input placeholder="Description" matInput formControlName="description">
         </mat-form-field>
         <mat-form-field>
+            <mat-label>Book Ser No</mat-label>
+            <input placeholder="Book Ser No" matInput formControlName="book_ser_no">
+        </mat-form-field>
+        <!-- <mat-form-field>
             <mat-label>Designation</mat-label>
            <mat-select formControlName="designation">
 <mat-option *ngFor="let item of desdata" [value]="item.code">
 {{item.name}}
 </mat-option>
            </mat-select>
-        </mat-form-field>
-        <mat-radio-group formControlName="gender" aria-label="Select an Gender">
-            <mat-radio-button value="M">Male</mat-radio-button>
-            <mat-radio-button value="F">Female</mat-radio-button>
+        </mat-form-field> -->
+        <mat-radio-group formControlName="persType" aria-label="Select pers type">
+            <mat-radio-button value="OFFR">Offr</mat-radio-button>
+            <mat-radio-button value="OCOR">JCO/OR</mat-radio-button>
           </mat-radio-group>
           <section class="example-section">
             <br>
-            <mat-checkbox formControlName="isactive" class="example-margin">Is Active</mat-checkbox>
+            <mat-checkbox formControlName="isCommon" class="example-margin">Is Common</mat-checkbox>
           </section>
  
     </div>

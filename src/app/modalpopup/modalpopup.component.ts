@@ -18,40 +18,39 @@ export class ModalpopupComponent implements OnInit {
   editdata: any;
 
   ngOnInit(): void {
-    this.loadDes();
+    //this.loadDes();
     if(this.data.empcode!=null && this.data.empcode!=''){
-this.LoadEditData(this.data.empcode);
+//this.LoadEditData(this.data.empcode);
     }
   }
 
-  loadDes() {
+  /* loadDes() {
     this.service.GetDes().subscribe(result => {
       this.desdata = result;
     });
-  }
+  } */
 
-  LoadEditData(code: any) {
+  /* LoadEditData(code: any) {
     this.service.GetEmployeebycode(code).subscribe(item => {
       this.editdata = item;
       this.Reactiveform.setValue({code:this.editdata.code,name:this.editdata.name,email:this.editdata.email,
         phone:this.editdata.phone,designation:this.editdata.designation,gender:'M',isactive:true})
     });
-  }
+  } */
 
   Reactiveform = new FormGroup({
-    code: new FormControl({ value: 0, disabled: true }),
-    name: new FormControl("", Validators.required),
-    email: new FormControl("", Validators.required),
-    phone: new FormControl("", Validators.required),
-    designation: new FormControl(""),
-    gender: new FormControl("M"),
-    isactive: new FormControl(true)
+    ruleGpName: new FormControl("", Validators.required),
+    cas_id: new FormControl("", Validators.required),
+    description: new FormControl("", Validators.required),
+    book_ser_no: new FormControl("", Validators.required),
+    persType: new FormControl("OFFR"),
+    isCommon: new FormControl(true)
   });
   SaveEmployee() {
     if (this.Reactiveform.valid) {
-      this.service.Save(this.Reactiveform.value.name).subscribe(result => {
+      this.service.Save(this.Reactiveform.value).subscribe(result => {
         this.respdata = result;
-        if (this.respdata.result == 'pass') {
+        if (this.respdata.result =! ' ') {
           alertify.success("saved successfully.")
           this.dialogref.close();
         }

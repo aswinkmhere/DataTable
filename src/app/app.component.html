@@ -343,35 +343,35 @@
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
-  
+          <!-- ['ruleGpId', 'ruleGpName', 'description', 'cas_id']; -->
     <!-- Position Column -->
-    <ng-container matColumnDef="code">
-      <th mat-header-cell mat-sort-header *matHeaderCellDef> Code </th>
-      <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+    <ng-container matColumnDef="ruleGpId">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef> GP ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.ruleGpId}} </td>
     </ng-container>
   
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-sort-header mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <ng-container matColumnDef="ruleGpName">
+      <th mat-sort-header mat-header-cell *matHeaderCellDef> NAME </th>
+      <td mat-cell *matCellDef="let element"> {{element.ruleGpName}} </td>
     </ng-container>
   
     <!-- Weight Column -->
-    <ng-container matColumnDef="email">
-      <th mat-sort-header mat-header-cell *matHeaderCellDef> Email </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    <ng-container matColumnDef="description">
+      <th mat-sort-header mat-header-cell *matHeaderCellDef> DESCRIPTION </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
     </ng-container>
   
     <!-- Symbol Column -->
-    <ng-container matColumnDef="phone">
-      <th mat-header-cell *matHeaderCellDef> phone </th>
-      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+    <ng-container matColumnDef="cas_id">
+      <th mat-header-cell *matHeaderCellDef> CAS ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.cas_id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> Action </th>
-      <td mat-cell *matCellDef="let element"> <button (click)="FunctionEdit(element.code)" mat-raised-button color="primary" >Edit</button> | 
-        <button mat-raised-button color="warn" (click)="FunctionDelete(element.code)">Delete</button>
+      <td mat-cell *matCellDef="let element"> <button (click)="FunctionEdit(element.ruleGpId)" mat-raised-button color="primary" >Edit</button> | 
+        <button mat-raised-button color="warn" (click)="FunctionDelete(element.ruleGpId)">Delete</button>
       </td>
     </ng-container>
   
